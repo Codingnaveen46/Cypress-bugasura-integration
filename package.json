@@ -2,11 +2,12 @@
   "name": "cypress-bugasura-demo1",
   "version": "1.0.0",
   "main": "index.js",
-"scripts": {
-  "test": "cypress run --spec 'cypress/e2e/todo.cy.js'",
-  "report:bugasura": "bugasura UPLOAD_RESULTS ./cypress/reports/junit/todo.cy.js-results.xml --api_key $BUGASURA_API_KEY --team_id $BUGASURA_TEAM_ID --project_id $BUGASURA_PROJECT_ID --testrun_id $BUGASURA_TESTRUN_ID --server $BUGASURA_SERVER",
-  "test:full": "npm run test && npm run report:bugasura"
-},
+  "scripts": {
+  "test": "npx cypress run --spec cypress/e2e/1-getting-started/todo.cy.js",
+  "report:bugasura": "bugasura UPLOAD_RESULTS ./cypress/reports/junit/todo.cy.js-results.xml --api_key d9925801b61bb8ce242ab7998223accbe3bbae19 --team_id 83422 --project_id 112220 --testrun_id  126793 --server facilio",
+  "test:full": "npm run test || true && npm run report:bugasura"
+}
+,
   "keywords": [],
   "author": "",
   "license": "ISC",

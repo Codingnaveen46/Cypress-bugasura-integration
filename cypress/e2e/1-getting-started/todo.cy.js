@@ -5,14 +5,14 @@ describe('example to-do app', () => {
     cy.visit('https://example.cypress.io/todo')
   })
 
-  it('#TES56 displays two todo items by default', () => {
+  it('#TES62 Displays two todo items by default ', () => {
 
     cy.get('.todo-list li').should('have.length', 2)
     cy.get('.todo-list li').first().should('have.text', 'Pay electric bill')
     cy.get('.todo-list li').last().should('have.text', 'Walk the dog')
   })
 
-  it('#TES57 can add new todo items', () => {
+  it('#TES63 can add new todo items', () => {
     // We'll store our item text in a variable so we can reuse it
     const newItem = 'Feed the cat'
     cy.get('[data-test=new-todo]').type(`${newItem}{enter}`)
@@ -22,7 +22,7 @@ describe('example to-do app', () => {
       .should('have.text', newItem)
   })
 
-  it('#TES58 can check off an item as completed', () => {
+  it('#TES64 can check off an item as completed', () => {
 
     cy.contains('Pay electric bill')
       .parent()
@@ -43,7 +43,7 @@ describe('example to-do app', () => {
         .check()
     })
 
-    it('#TES59 can filter for uncompleted tasks', () => {
+    it('#TES65 can filter for uncompleted tasks ', () => {
 
       cy.contains('Active').click()
 
@@ -56,7 +56,7 @@ describe('example to-do app', () => {
       cy.contains('Pay electric bill').should('not.exist')
     })
 
-    it('#TES60 can filter for completed tasks', () => {
+    it('#TES66 can filter for completed tasks', () => {
 
       cy.contains('Completed').click()
 
@@ -68,7 +68,7 @@ describe('example to-do app', () => {
       cy.contains('Walk the dog').should('not.exist')
     })
 
-    it('#TES61 can delete all completed tasks', () => {
+    it('#TES67 can delete all completed tasks ', () => {
  
       cy.contains('Clear completed').click()
 
